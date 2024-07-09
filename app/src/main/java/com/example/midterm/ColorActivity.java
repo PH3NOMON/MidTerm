@@ -32,20 +32,35 @@ public class ColorActivity extends AppCompatActivity {
         return true;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.menu_red:
-//                layout.setBackgroundColor(Color.RED);
-//                return true;
-//            case R.id.menu_green:
-//                layout.setBackgroundColor(Color.GREEN);
-//                return true;
-//            case R.id.menu_yellow:
-//                layout.setBackgroundColor(Color.YELLOW);
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+    public class LibraryMenuIds {
+        public static final int MENU_RED = 1;
+        public static final int MENU_GREEN = 2;
+        public static final int MENU_YELLOW = 3;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == LibraryMenuIds.MENU_RED) {
+            changeLayoutColor(Color.RED);
+            return true;
+        } else if (id == LibraryMenuIds.MENU_GREEN) {
+            changeLayoutColor(Color.GREEN);
+            return true;
+        } else if (id == LibraryMenuIds.MENU_YELLOW) {
+            changeLayoutColor(Color.YELLOW);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void changeLayoutColor(int color) {
+        // Example method to change layout color
+        findViewById(android.R.id.content).setBackgroundColor(color);
+    }
+
 }
+
+
+

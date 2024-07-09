@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".FragmentOne">
 
     <!-- Email Label -->
@@ -11,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email_label"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:textColor="@color/yellow"/>
 
     <!-- Email EditText -->
     <EditText
@@ -22,7 +25,10 @@
         android:layout_alignBaseline="@id/emailLabel"
         android:layout_marginStart="16dp"
         android:hint="@string/hint_email"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+
+        android:padding="8dp"
+        android:textSize="16sp"/>
 
     <!-- Password Label -->
     <TextView
@@ -31,7 +37,9 @@
         android:layout_height="wrap_content"
         android:text="@string/password_label"
         android:layout_below="@id/emailEditText"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/yellow"/>
 
     <!-- Password EditText -->
     <EditText
@@ -42,37 +50,44 @@
         android:layout_alignBaseline="@id/passwordLabel"
         android:layout_marginStart="16dp"
         android:hint="@string/hint_password"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+
+        android:padding="8dp"
+        android:textSize="16sp"/>
 
     <!-- Submit Button -->
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordEditText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="@string/submit"/>
+        android:layout_marginTop="16dp"
+        android:text="@string/submit"
+        android:background="@color/green"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:textSize="16sp"/>
 
+    <!-- Output 1 -->
     <TextView
         android:id="@+id/output1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/submitButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text=""/>
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        />
 
+    <!-- Output 2 -->
     <TextView
         android:id="@+id/output2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_below="@id/output1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text=""/>
-
-
-
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        />
 </RelativeLayout>
