@@ -26,6 +26,7 @@ public class ColorActivity extends AppCompatActivity {
         layout = findViewById(R.id.colorLayout);
     }
 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.color_menu, menu);
 

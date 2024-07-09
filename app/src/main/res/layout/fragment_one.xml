@@ -14,7 +14,7 @@
         android:text="@string/email_label"
         android:layout_marginTop="20dp"
         android:textSize="16sp"
-        android:textColor="@color/yellow"/>
+        android:textColor="@color/black"/>
 
     <!-- Email EditText -->
     <EditText
@@ -39,7 +39,7 @@
         android:layout_below="@id/emailEditText"
         android:layout_marginTop="16dp"
         android:textSize="16sp"
-        android:textColor="@color/yellow"/>
+        android:textColor="@color/black"/>
 
     <!-- Password EditText -->
     <EditText
@@ -58,15 +58,15 @@
     <!-- Submit Button -->
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="@string/submit"
-        android:background="@color/green"
+
         android:textColor="@android:color/white"
-        android:padding="8dp"
+        android:padding="15dp"
         android:textSize="16sp"/>
 
     <!-- Output 1 -->
@@ -78,7 +78,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:textSize="16sp"
-        />
+        android:textColor="@color/yellow"/>
 
     <!-- Output 2 -->
     <TextView
@@ -89,5 +89,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:textSize="16sp"
-        />
+        android:textColor="@color/green"/>
 </RelativeLayout>

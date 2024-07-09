@@ -44,13 +44,13 @@ public class FragmentTwo extends Fragment {
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedVewModel.class);
 
-        Output = view.findViewById(R.id.home);
+        Output = view.findViewById(R.id.data3);
 
         // Observe the shared data and update the TextView
         sharedViewModel.getText().observe(getViewLifecycleOwner(), new androidx.lifecycle.Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Output.setText("Received data = " + s);
+                Output.setText("data is = " + s);
             }
         });
 

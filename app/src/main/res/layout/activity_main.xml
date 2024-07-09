@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,17 +13,13 @@
         android:background="@color/green"
         android:theme="?attr/actionBarTheme"
         android:title="Fragments"
-        android:titleTextColor="@android:color/white"
-        app:titleMargin="4dp"
-        app:titleTextColor="@color/white" />
+        android:titleTextColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
-        android:background="@color/white"
-        android:layout_marginBottom="16dp"
+        android:padding="16dp"
         android:elevation="4dp">
 
         <TextView
@@ -33,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Enter the data :"
             android:textSize="16sp"
-            android:textColor="@color/yellow"
+            android:textColor="@color/black"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="8dp" />
 
@@ -52,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        android:padding="16dp"
 
         android:elevation="4dp">
 
@@ -60,13 +54,13 @@
             android:id="@+id/btn1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-
-            android:padding="12dp"
             android:text="Transfer data"
+            android:textSize="16sp"
+
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:padding="12dp"
+            android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/btn2"
@@ -75,9 +69,12 @@
             android:layout_weight="1"
             android:text="Next Activity"
             android:textSize="16sp"
+
             android:textColor="@color/white"
             android:padding="12dp" />
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
