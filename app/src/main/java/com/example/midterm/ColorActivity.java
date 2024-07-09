@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,29 +26,50 @@ public class ColorActivity extends AppCompatActivity {
         layout = findViewById(R.id.colorLayout);
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.color_menu, menu);
+        getMenuInflater().inflate(R.menu.color_menu, menu);
+
+        MenuItem redItem = menu.findItem(R.id.menu_red);
+        redItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                onOptionsItemSelected(item);
+                return true;
+            }
+        });
+
+        MenuItem greenItem = menu.findItem(R.id.menu_green);
+        greenItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                onOptionsItemSelected(item);
+                return true;
+            }
+        });
+
+        MenuItem yellowItem = menu.findItem(R.id.menu_yellow);
+        yellowItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                onOptionsItemSelected(item);
+                return true;
+            }
+        });
+
         return true;
     }
 
-    public class LibraryMenuIds {
-        public static final int MENU_RED = 1;
-        public static final int MENU_GREEN = 2;
-        public static final int MENU_YELLOW = 3;
-    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == LibraryMenuIds.MENU_RED) {
+        if (id == R.id.menu_red) {
             changeLayoutColor(Color.RED);
             return true;
-        } else if (id == LibraryMenuIds.MENU_GREEN) {
+        } else if (id == R.id.menu_green) {
             changeLayoutColor(Color.GREEN);
             return true;
-        } else if (id == LibraryMenuIds.MENU_YELLOW) {
+        } else if (id == R.id.menu_yellow) {
             changeLayoutColor(Color.YELLOW);
             return true;
         } else {
@@ -56,8 +78,8 @@ public class ColorActivity extends AppCompatActivity {
     }
 
     private void changeLayoutColor(int color) {
-        // Example method to change layout color
-        findViewById(android.R.id.content).setBackgroundColor(color);
+        View view = findViewById(R.id.colorLayout);
+        view.setBackgroundColor(color);
     }
 
 }
