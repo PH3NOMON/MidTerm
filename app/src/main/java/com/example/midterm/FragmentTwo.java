@@ -2,6 +2,8 @@ package com.example.midterm;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,10 @@ import android.widget.TextView;
 public class FragmentTwo extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
+
+    SharedVewModel sharedViewModel;
+
+    TextView Output;
     private String receivedValue;
 
     public static FragmentTwo newInstance(String param1) {
@@ -28,19 +34,26 @@ public class FragmentTwo extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            receivedValue = getArguments().getString(ARG_PARAM1);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_two, container, false);
-        TextView textView = view.findViewById(R.id.home);
-        if (receivedValue != null) {
-            textView.setText(receivedValue);
-        }
+
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedVewModel.class);
+
+        Output = view.findViewById(R.id.home);
+
+        // Observe the shared data and update the TextView
+        sharedViewModel.getText().observe(getViewLifecycleOwner(), new androidx.lifecycle.Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Output.setText("Received data = " + s);
+            }
+        });
+
         return view;
     }
 }

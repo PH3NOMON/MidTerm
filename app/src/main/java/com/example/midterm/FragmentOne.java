@@ -53,7 +53,7 @@ public class FragmentOne extends Fragment {
         Email_ET = view.findViewById(R.id.emailEditText);
         Pass_ET = view.findViewById(R.id.passwordEditText);
         btn = view.findViewById(R.id.submitButton);
-        Output1 = view.findViewById(R.id.output);
+        Output1 = view.findViewById(R.id.output1);
         Output2 = view.findViewById(R.id.output2);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +73,7 @@ public class FragmentOne extends Fragment {
 
             FragmentTwo fragmentTwo = FragmentTwo.newInstance(receivedValue);
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.add(R.id.fragmentContainerView, fragmentTwo);
+            transaction.add(R.id.fragmentContainerViewTwo, fragmentTwo);
             transaction.addToBackStack(null);
             transaction.commit();
         }

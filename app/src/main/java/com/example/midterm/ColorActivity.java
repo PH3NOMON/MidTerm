@@ -12,6 +12,8 @@ import androidx.appcompat.widget.Toolbar;
 
 public class ColorActivity extends AppCompatActivity {
 
+    private LinearLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,30 +21,31 @@ public class ColorActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        layout = findViewById(R.id.colorLayout);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.colormenu, menu);
+        inflater.inflate(R.menu.color_menu, menu);
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        LinearLayout layout = findViewById(R.id.colorLayout);
-        switch (item.getItemId()) {
-            case R.id.menu_red:
-                layout.setBackgroundColor(Color.RED);
-                return true;
-            case R.id.menu_green:
-                layout.setBackgroundColor(Color.GREEN);
-                return true;
-            case R.id.menu_yellow:
-                layout.setBackgroundColor(Color.YELLOW);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.menu_red:
+//                layout.setBackgroundColor(Color.RED);
+//                return true;
+//            case R.id.menu_green:
+//                layout.setBackgroundColor(Color.GREEN);
+//                return true;
+//            case R.id.menu_yellow:
+//                layout.setBackgroundColor(Color.YELLOW);
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 }
